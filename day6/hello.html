@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Basic Calculator</title>
+</head>
+<body>
+  <script>
+    // Function to prompt and get user inputs
+    function getInput(message) {
+      return prompt(message);
+    }
+
+    // Arithmetic functions
+    function add(a, b) {
+      return a + b;
+    }
+
+    function subtract(a, b) {
+      return a - b;
+    }
+
+    function multiply(a, b) {
+      return a * b;
+    }
+
+    function divide(a, b) {
+      if (b === 0) {
+        return "Error: Division by zero";
+      } else {
+        return a / b;
+      }
+    }
+
+    // Function to handle calculator logic
+    function calculator() {
+      // Get user inputs as strings
+      let input1 = getInput("Enter the first number:");
+      let input2 = getInput("Enter the second number:");
+      let operator = getInput("Choose an operator (+, -, *, /):");
+
+      // Show data types before conversion
+      alert("Type of first input: " + typeof input1);
+      alert("Type of second input: " + typeof input2);
+
+      // Convert strings to numbers
+      let num1 = parseFloat(input1);
+      let num2 = parseFloat(input2);
+
+      // Perform operation using functions
+      let result;
+
+      if (operator === "+") {
+        result = add(num1, num2);
+      } else if (operator === "-") {
+        result = subtract(num1, num2);
+      } else if (operator === "*") {
+        result = multiply(num1, num2);
+      } else if (operator === "/") {
+        result = divide(num1, num2);
+      } else {
+        result = "Invalid operator selected.";
+      }
+
+      // Display result
+      alert("Result: " + result);
+    }
+
+    // Run the calculator
+    calculator();
+  </script>
+</body>
+</html>
